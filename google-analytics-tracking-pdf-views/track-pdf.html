@@ -3,15 +3,14 @@
 	<head>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-32322901-1']);
-			_gaq.push(['_setDomainName', 'sandbox.com']);
-			_gaq.push(['_trackPageview']);
+			_gaq.push(["_setAccount", "UA-7470247-1"]);
+			_gaq.push(["_trackPageview"]);
 			
 			window.loadedCount = 0;
 			window.trackingLoaded = function (f) {
 				loadedCount++;
 				if (window.loadedCount === 2) {
-					window.location.href = document.location.host + '/' + window.location.search.split("=")[1];
+					window.location.href = window.location.search.split("=")[1];
 				}
 			};
 		</script>
@@ -20,7 +19,11 @@
 	<body>
 		<h1>loading...</h1>
 		<script type="text/javascript" charset="utf-8">
-			_gaq.push(['_trackEvent', 'lightbox', 'show', 'some text']);
+			var file = 'error extracting file';
+			if (/.*\/(.*\.pdf)/.exec(window.location.href) && /.*\/(.*\.pdf)/.exec(window.location.href)[1]) {
+				file = /.*\/(.*\.pdf)/.exec(window.location.href)[1];
+			}
+			_gaq.push(['_trackEvent', 'PDF', file, 'Download']);
 		</script>
 	</body>
 </html>
