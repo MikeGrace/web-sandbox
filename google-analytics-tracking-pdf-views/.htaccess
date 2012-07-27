@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !/track-pdf.html [NC]
+RewriteRule ^(.*\.pdf)$ /google-analytics-tracking-pdf-views/track-pdf.html?q=$1 [R]

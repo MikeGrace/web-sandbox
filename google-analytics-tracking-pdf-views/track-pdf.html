@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-32322901-1']);
+			_gaq.push(['_setDomainName', 'sandbox.com']);
+			_gaq.push(['_trackPageview']);
+			
+			window.loadedCount = 0;
+			window.trackingLoaded = function (f) {
+				loadedCount++;
+				if (window.loadedCount === 2) {
+					window.location.href = document.location.host + '/' + window.location.search.split("=")[1];
+				}
+			};
+		</script>
+		<script type="text/javascript" charset="utf-8" src='ga.js'></script>
+	</head>
+	<body>
+		<h1>loading...</h1>
+		<script type="text/javascript" charset="utf-8">
+			_gaq.push(['_trackEvent', 'lightbox', 'show', 'some text']);
+		</script>
+	</body>
+</html>
